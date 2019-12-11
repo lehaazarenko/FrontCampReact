@@ -1,0 +1,30 @@
+.ToggleButton {
+    font-size: 1rem;
+}
+
+.first-toggle-option,
+.second-toggle-option {
+    padding: 10px 20px;
+    background-color: rgba(35,35,35, 0.5);
+    text-transform: uppercase;
+}
+
+.first-toggle-option.active,
+.second-toggle-option.active {
+    background-color: #f65261;
+}
+
+.first-toggle-option:hover,
+.second-toggle-option:hover {
+    cursor: pointer;
+}
+
+.first-toggle-option {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.second-toggle-option {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
