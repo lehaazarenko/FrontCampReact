@@ -1,0 +1,11 @@
+.Footer {
+	background-color: #555555;
+	min-height: 100px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer .footer-logo {
+	height: 1.5rem;
+}

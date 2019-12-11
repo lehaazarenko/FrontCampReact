@@ -1,0 +1,12 @@
+.SearchResultsList {
+	background-color: #424242;
+}
+
+.SearchResultsList .search-results-list-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
