@@ -3,6 +3,10 @@
 	margin-bottom: 20px;
 }
 
+.SearchResultsItem:hover {
+    cursor: pointer;
+}
+
 .SearchResultsItem img {
     max-width: 300px;
 }

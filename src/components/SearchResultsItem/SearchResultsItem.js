@@ -9,7 +9,7 @@ class SearchResultsItem extends Component {
 
   render() {
     return (
-      <div className="SearchResultsItem">
+      <div className="SearchResultsItem" onClick={this.handleResultsItemClick}>
         <img src={this.item.poster_path} alt={`${this.item.title} poster`}/>
         <div className="MovieDescription">
           <div className="movie-main-data">
@@ -20,6 +20,10 @@ class SearchResultsItem extends Component {
         </div>
       </div>
     )
+  }
+
+  handleResultsItemClick = () => {
+    console.log(this.item)
   }
 }
 

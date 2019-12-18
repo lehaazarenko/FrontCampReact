@@ -22,34 +22,6 @@ class SearchPage extends Component {
     }
   }
 
-  getParamsFromQuery = (searchQueryParams) => {
-    return {
-      searchBy: searchQueryParams.get('searchBy'),
-      searchValue: searchQueryParams.get('search'),
-      sortBy: searchQueryParams.get('sortBy'),
-      sortDirection: searchQueryParams.get('sortOrder')
-    };
-  }
-
-  updateState = (paramsFromQuery, newStateProps, searchQuery) => {
-    this.state = {
-      searchBy: paramsFromQuery.searchBy || newStateProps.searchBy,
-      searchValue: paramsFromQuery.searchValue || newStateProps.searchValue,
-      searchByOptions: newStateProps.searchByOptions,
-      sortByOptions: newStateProps.sortByOptions,
-      searchByChanged: false,
-      sortByChanged: false,
-      searchQuery: searchQuery,
-      sortBy: paramsFromQuery.sortBy || newStateProps.defaultSortBy,
-      sortDirection: paramsFromQuery.sortDirection || newStateProps.defaultSortDirection,
-      sortDirectionChanged: false,
-      results: newStateProps.films || [],
-      total: 0 || newStateProps.total,
-      runSearch: false,
-      sortDirectionOptions: newStateProps.sortDirectionOptions
-    }
-  };
-
   shouldComponentUpdate = (nextProps) => {
     if (this.state.runSearch) {
       this.props.getFilms(this.state.searchQuery);
@@ -80,6 +52,36 @@ class SearchPage extends Component {
       </div>
     )
   }
+
+  getParamsFromQuery = (searchQueryParams) => {
+    return {
+      searchBy: searchQueryParams.get('searchBy'),
+      searchValue: searchQueryParams.get('search'),
+      sortBy: searchQueryParams.get('sortBy'),
+      sortDirection: searchQueryParams.get('sortOrder')
+    };
+  };
+
+  updateState = (paramsFromQuery, newStateProps, searchQuery) => {
+    console.log('updateState:', newStateProps.total);
+    this.state = {
+      searchBy: paramsFromQuery.searchBy || newStateProps.searchBy,
+      searchValue: paramsFromQuery.searchValue || newStateProps.searchValue,
+      searchByOptions: newStateProps.searchByOptions,
+      sortByOptions: newStateProps.sortByOptions,
+      searchByChanged: false,
+      sortByChanged: false,
+      searchQuery: searchQuery,
+      sortBy: paramsFromQuery.sortBy || newStateProps.defaultSortBy,
+      sortDirection: paramsFromQuery.sortDirection || newStateProps.defaultSortDirection,
+      sortDirectionChanged: false,
+      results: newStateProps.films || [],
+      total: 0 || newStateProps.total,
+      runSearch: false,
+      sortDirectionOptions: newStateProps.sortDirectionOptions
+    }
+    console.log('updateState this.state.total:', this.state.total);
+  };
 
   onSearchByChange = (newToggleOption) => {
     if (this.state.searchBy !== newToggleOption) {
