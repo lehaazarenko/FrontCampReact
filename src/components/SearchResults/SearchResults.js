@@ -1,30 +1,44 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './SearchResults.css';
 
 import SearchResultsList from './../SearchResultsList/SearchResultsList.js';
 import ToggleButton from './../ToggleButton/ToggleButton.js';
 
+import { updateSortBy } from './../../actions/films';
+
 class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-    this.results = props.results;
-  }
 
   render() {
-    const searchResultsCount = 7;
-    const toggleOptions = ['release date', 'rating'];
     return (
       <div className="SearchResults">
         <div className="search-results-data-wrapper">
           <div className="search-results-data">
-              <span className="search-results-count">{searchResultsCount} movies found</span>
-              <ToggleButton toggleOptions={toggleOptions} />
+              <span className="search-results-count">Movies found: {this.props.total}</span>
+              <ToggleButton toggleOptions={this.props.sortByOptions}
+                            selectedOption={this.props.sortBy}
+                            onToggleOptionChange={this.props.onSortByChange} />
           </div>
         </div>
-        <SearchResultsList results={this.results} />
+        <SearchResultsList results={this.props.results} />
       </div>
     )
   }
 }
 
-export default SearchResults;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateSortBy: (sortBy) => {
+      dispatch(updateSortBy(sortBy))
+    }
+  }
+};
+
+const mapStateToProps = (state) => ({
+  data: state
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchResults);
