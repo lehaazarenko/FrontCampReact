@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
 import films from './films';
-// import playlists from './playlists';
+import movie from './movie';
 // import filterTracks from './filterTracks';
 
 export default combineReducers({
-  films
+  films,
+  movie
   // playlists,
   // filterTracks
 });

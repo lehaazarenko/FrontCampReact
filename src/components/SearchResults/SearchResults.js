@@ -29,7 +29,7 @@ class SearchResults extends Component {
                             onToggleOptionChange={this.props.onSortByChange} />
           </div>
         </div>
-        <SearchResultsList results={this.props.results} />
+        <SearchResultsList results={this.props.results} onResultsItemClick={this.props.onResultsItemClick} />
       </div>
     )
   }

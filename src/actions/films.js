@@ -1,13 +1,27 @@
 import axios from 'axios';
+const baseUrl = 'http:\/\/reactjs-cdp.herokuapp.com/';
+const moviesUrl = baseUrl + 'movies';
 
 export function getFilms(searchQuery) {
-  const baseUrl = 'http:\/\/reactjs-cdp.herokuapp.com/';
-  const moviesUrl = baseUrl + 'movies';
   return {
   	type: 'GET_FILMS',
     payload: axios.get(`${moviesUrl}?${searchQuery}`)
   };
 };
+
+export function getMovie(id) {
+  return {
+    type: 'GET_MOVIE',
+    payload: axios.get(`${moviesUrl}/${id}`)
+  }
+};
+
+export function getRelatedFilms(searchQuery) {
+  return {
+    type: 'GET_RELATED_FILMS',
+    payload: axios.get(`${moviesUrl}?${searchQuery}`)
+  }
+}
 
 export function updateSearchBy(searchBy) {
   return {
@@ -42,5 +56,9 @@ export function setSearchProps(searchBy, searchValue) {
 
 export default {
   getFilms,
-  updateSearchBy
+  updateSearchBy,
+  updateSortBy,
+  updateSortDirection,
+  setSearchProps,
+  getMovie
 };

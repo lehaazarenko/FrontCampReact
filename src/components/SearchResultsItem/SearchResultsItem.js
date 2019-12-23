@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './SearchResultsItem.css';
 
 class SearchResultsItem extends Component {
-  constructor(props) {
+  constructor(props, context) {
     super(props);
     this.item = props.item;
   }
@@ -23,7 +23,7 @@ class SearchResultsItem extends Component {
   }
 
   handleResultsItemClick = () => {
-    console.log(this.item)
+    this.props.onResultsItemClick(this.item.id);
   }
 }
 

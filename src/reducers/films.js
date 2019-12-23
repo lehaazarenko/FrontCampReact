@@ -32,34 +32,34 @@ const initialState = {
 export default function films(state = initialState, action) {
 
   switch (action.type) {
-  	case 'GET_FILMS_PENDING':
-  	  return {
-  	  	...state,
-  	  	loading: true
-  	  };
+    case 'GET_FILMS_PENDING':
+      return {
+        ...state,
+        loading: true
+      };
 
-  	case 'GET_FILMS_FULFILLED':
-  	  const searchData = action.payload.data; 
-  	  return {
-  	  	...state,
-  	  	films: searchData.data,
-  	  	loading: false,
-  	  	total: searchData.total
-  	  }
+    case 'GET_FILMS_FULFILLED':
+      const searchData = action.payload.data; 
+      return {
+        ...state,
+        films: searchData.data,
+        loading: false,
+        total: searchData.total
+      }
 
-  	case 'GET_FILMS_REJECTED':
-  	  return {
-  	  	...state,
-  	  	loading: false,
-  	  	total: 0,
-  	  	error: action.payload.message
-  	  }
+    case 'GET_FILMS_REJECTED':
+      return {
+        ...state,
+        loading: false,
+        total: 0,
+        error: action.payload.message
+      }
 
-  	case 'UPDATE_SEARCH_BY':
-  	  return {
-  	  	...state,
-  	  	searchBy: action.payload
-  	  }
+    case 'UPDATE_SEARCH_BY':
+      return {
+        ...state,
+        searchBy: action.payload
+      }
 
     case 'UPDATE_SORT_BY':
       return {
@@ -80,7 +80,7 @@ export default function films(state = initialState, action) {
         searchValue: action.payload.searchValue
       }
 
-  	default:
+    default:
       return state;
   }
 }

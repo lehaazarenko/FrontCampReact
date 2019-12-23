@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 import SearchHeader from './../SearchHeader/SearchHeader.js';
 import SearchResults from './../SearchResults/SearchResults.js';
@@ -42,16 +43,26 @@ class SearchPage extends Component {
                       handleSearchRun={this.handleSearchRun}
                       searchBy={this.state.searchBy} 
                       searchValue={this.state.searchValue}
-                      searchByOptions={this.state.searchByOptions} />
+                      searchByOptions={this.state.searchByOptions}
+                      handleLogoClick={this.handleLogoClick} />
         <SearchResults onSortByChange={this.onSortByChange}
                        sortBy={this.state.sortBy}
                        sortDirection={this.state.sortDirection}
                        results={this.state.results}
                        sortByOptions={this.state.sortByOptions}
-                       total={this.state.total} />
+                       total={this.state.total}
+                       onResultsItemClick={this.onResultsItemClick} />
       </div>
     )
   }
+
+  handleLogoClick = () => {
+    this.props.history.push('/search');
+  };
+
+  onResultsItemClick = (itemId) => {
+    this.props.history.push('/search/' + itemId);
+  };
 
   getParamsFromQuery = (searchQueryParams) => {
     return {
@@ -63,7 +74,6 @@ class SearchPage extends Component {
   };
 
   updateState = (paramsFromQuery, newStateProps, searchQuery) => {
-    console.log('updateState:', newStateProps.total);
     this.state = {
       searchBy: paramsFromQuery.searchBy || newStateProps.searchBy,
       searchValue: paramsFromQuery.searchValue || newStateProps.searchValue,
@@ -80,7 +90,6 @@ class SearchPage extends Component {
       runSearch: false,
       sortDirectionOptions: newStateProps.sortDirectionOptions
     }
-    console.log('updateState this.state.total:', this.state.total);
   };
 
   onSearchByChange = (newToggleOption) => {

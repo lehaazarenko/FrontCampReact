@@ -1,0 +1,94 @@
+.MovieHeader {
+    height: 500px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MovieHeader::before {
+    content: "";
+    height: 500px;
+    width: 100%;
+    background-image: url('./header-background.jpg');
+    filter: blur(4px);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.MovieHeader .header-logo {
+    position: absolute;
+    height: 1.5rem;
+    left: 75px;
+    top: 25px;
+}
+
+.MovieHeader .header-logo:hover {
+    cursor: pointer;
+}
+
+.MovieHeader .movie-poster {
+    width: 15%;
+}
+
+.MovieHeader .movie-description-container {
+    width: 55%;
+    height: 400px;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+
+.movie-title-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.movie-title {
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.movie-rating {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: lawngreen;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    /* align-content: center; */
+    line-height: 50px;
+    margin-left: 10px;
+}
+
+.movie-tagline {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.movie-data {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.movie-year {
+    margin-right: 30px;
+}
+
+.movie-runtime span,
+.movie-year span {
+    font-size: 1.5rem;
+    color: indianred;
+}
+
+.movie-description {
+    text-align: left;
+}

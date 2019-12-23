@@ -20,3 +20,14 @@
     right: 0;
     top: 150px;
 }
+
+.SearchResultsList .related-films {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #555555;
+    color: #ffffff;
+    padding: 0px 500px;
+    margin: 0 auto;
+}

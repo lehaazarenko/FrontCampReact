@@ -8,7 +8,7 @@ class SearchHeader extends Component {
   render() {
     return (
       <div className="SearchHeader">
-        <img src="images/netflix-logo.png" className="header-logo" alt="Logo" />
+        <img src="images/netflix-logo.png" className="header-logo" alt="Logo" onClick={this.handleLogoClick} />
         <SearchSection searchBy={this.props.searchBy}
                        searchValue={this.props.searchValue}
                        onSearchByChange={this.props.onSearchByChange}
@@ -16,6 +16,10 @@ class SearchHeader extends Component {
                        handleSearchRun={this.props.handleSearchRun} />
       </div>
     )
+  }
+
+  handleLogoClick = () => {
+    this.props.handleLogoClick();
   }
 }
 

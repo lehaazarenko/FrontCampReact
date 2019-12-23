@@ -28,12 +28,12 @@ class SearchSection extends Component {
 
   handleInputChange = (event) => {
     this.props.searchValue = event.target.value;
-  }
+  };
 
   handleSearchRun = (e) => {
     const searchValue = this.refs.searchInput.value;
     this.props.handleSearchRun(searchValue);
-  }
+  };
 }
 
 const mapDispatchToProps = (dispatch) => {
