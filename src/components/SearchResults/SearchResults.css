@@ -1,0 +1,20 @@
+.search-results-data-wrapper {
+    background-color: #555555;
+}
+
+.search-results-data {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    height: 60px;
+    background-color: #555555;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-results-count {
+    font-size: 1rem;
+    font-weight: bold;
+}
+

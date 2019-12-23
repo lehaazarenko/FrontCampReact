@@ -1,0 +1,33 @@
+.SearchResultsList {
+	background-color: #424242;
+	min-height: 400px;
+}
+
+.SearchResultsList .search-results-list-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.SearchResultsList .no-results-found {
+    color: #ffffff;
+    font-size: 3rem;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 150px;
+}
+
+.SearchResultsList .related-films {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #555555;
+    color: #ffffff;
+    padding: 0px 500px;
+    margin: 0 auto;
+}

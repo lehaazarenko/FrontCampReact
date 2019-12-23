@@ -1,0 +1,32 @@
+.SearchHeader {
+    height: 400px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+.SearchHeader::before {
+    content: "";
+    height: 400px;
+    width: 100%;
+    background-image: url('./header-background.jpg');
+    filter: blur(4px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.SearchHeader .header-logo {
+    position: absolute;
+    height: 1.5rem;
+    left: 75px;
+    top: 25px;
+}
+
+.SearchHeader .header-logo:hover {
+    cursor: pointer;
+}

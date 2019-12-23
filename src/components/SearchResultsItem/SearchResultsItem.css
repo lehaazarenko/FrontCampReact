@@ -1,0 +1,39 @@
+.SearchResultsItem {
+	max-width: 300px;
+	margin-bottom: 20px;
+}
+
+.SearchResultsItem:hover {
+    cursor: pointer;
+}
+
+.SearchResultsItem img {
+    max-width: 300px;
+}
+
+.SearchResultsItem .MovieDescription {
+	color: #ffffff;
+}
+
+.SearchResultsItem .MovieDescription .movie-main-data {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	align-items: center;
+}
+
+.SearchResultsItem .MovieDescription .movie-main-data .movie-release-year {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+.SearchResultsItem .MovieDescription .movie-main-data .movie-title {
+	font-size: 1.2rem;
+}
+
+.SearchResultsItem .MovieDescription .movie-gengre {
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+}

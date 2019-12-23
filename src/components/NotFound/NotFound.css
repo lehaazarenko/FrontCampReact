@@ -1,0 +1,12 @@
+.NotFound {
+	height: calc(100vh - 100px);
+    padding-top: 30vh;
+    font-size: 2rem;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.go-to-home-page {
+	font-weight: normal;
+	font-size: 1.5rem;
+}
